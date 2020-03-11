@@ -34,7 +34,6 @@ const videoReducer = (state, action) => {
         .update('step', () => {
           const divider = action.duration % NUMBER_OF_FRAME;
           const step = Math.floor(action.duration / divider);
-          console.log({ divider, step });
 
           return step;
         })
@@ -44,7 +43,6 @@ const videoReducer = (state, action) => {
     case 'SET_SNAPSHOT':
       return state.update('snapshots', list => list.push(action.snapshot));
     case 'UPDATE_CURRENT_STEP':
-      console.log('kk');
       return state.update('currentStep', value => value + 1);
     default:
       return state;
