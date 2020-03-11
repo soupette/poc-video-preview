@@ -7,7 +7,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import client from '../../utils/contentful';
-import Video from '../Video';
+import ThumbnailVideo from '../ThumbnailVideo';
+import ThumbnailsVideo from '../ThumbnailsVideo';
 
 function App() {
   const [video, setVideo] = useState(null);
@@ -29,12 +30,23 @@ function App() {
       <Container>
         <Row>
           <Col lg="6">
-            <Video
+            <ThumbnailVideo
               videoUrl={video.url}
-              thumbnailHandler={thumbnail => console.log(thumbnail)}
+              thumebnailHandler={thumbnail => console.log(thumbnail)}
               // width={120}
               // height={80}
-              snapshotAtTime={130}
+              snapshotAtTime={30}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg="6">
+            <ThumbnailsVideo
+              videoUrl={video.url}
+              thuembnailHandler={thumbnail => console.log(thumbnail)}
+              // width={120}
+              // height={80}
+              // snapshotAtTime={0}
             />
           </Col>
         </Row>

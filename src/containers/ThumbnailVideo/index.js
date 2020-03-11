@@ -9,7 +9,7 @@ import Wrapper from './Wrapper';
 import reducer, { initialState } from './reducer';
 import init from './init';
 
-function Video({ thumbnailHandler, ...rest }) {
+const ThumbnailVideo = ({ thumbnailHandler, ...rest }) => {
   const [reducerState, dispatch] = useReducer(reducer, initialState, () =>
     init(initialState, rest),
   );
@@ -87,10 +87,10 @@ function Video({ thumbnailHandler, ...rest }) {
         <canvas className="snapshot-generator" ref={canvasRef} />
         <Wrapper ref={wrapperRef}>
           {/* This is where we should set the video icon until we generate the thumbnail */}
-          {/* <img
+          <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/1200px-Google_Images_2015_logo.svg.png"
             alt=""
-          /> */}
+          />
 
           <video
             muted
@@ -129,12 +129,13 @@ function Video({ thumbnailHandler, ...rest }) {
       <img src={snapshot} alt="generated snap" />
     </Wrapper>
   );
-}
+};
 
-Video.defaultProps = {
+ThumbnailVideo.defaultProps = {
   height: null,
+  snapshotAtTime: 0,
   width: null,
 };
-Video.propTypes = {};
+ThumbnailVideo.propTypes = {};
 
-export default Video;
+export default ThumbnailVideo;
