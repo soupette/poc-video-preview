@@ -35,7 +35,7 @@ function App() {
               thumebnailHandler={thumbnail => console.log(thumbnail)}
               // width={120}
               // height={80}
-              snapshotAtTime={30}
+              snapshotAtTime={0}
             />
           </Col>
         </Row>
