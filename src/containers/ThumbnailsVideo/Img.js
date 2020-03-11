@@ -18,7 +18,7 @@ const Img = ({ files }) => {
   };
 
   const wait = async () => {
-    return new Promise(resolve => setTimeout(resolve, 100));
+    return new Promise(resolve => setTimeout(resolve, 400));
   };
 
   return <img src={files[currentFile]} alt="" onMouseOver={() => handleOnHover()} />;
